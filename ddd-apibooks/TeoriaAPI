@@ -1,0 +1,45 @@
+O que é uma API?
+
+API (Application Programming Interface) é um conjunto de definições e protocolos que permite que diferentes sistemas conversem entre si.
+
+No caso, usamos a API OpenLibrary, que expõe dados de livros em formato JSON por meio de requisições HTTP.
+
+Exemplo de chamada:
+
+https://openlibrary.org/search.json?title=harry+potter
+
+
+Resposta simplificada:
+
+{
+  "numFound": 1234,
+  "docs": [
+    {
+      "title": "Harry Potter and the Philosopher’s Stone",
+      "author_name": ["J.K. Rowling"],
+      "first_publish_year": 1997
+    }
+  ]
+}
+
+🔹 Passos para Criação do Projeto
+
+Criar o projeto Java com Maven ou Gradle.
+
+Adicionar dependências para requisições HTTP e parse de JSON (HttpClient, Gson ou Jackson).
+
+Criar a classe Livro que representa os dados principais do livro.
+
+Criar OpenLibraryResponse para mapear o JSON retornado da API.
+
+Criar LivroServico para:
+
+Montar a URL da API.
+
+Fazer a requisição HTTP.
+
+Converter a resposta JSON em objetos Java.
+
+Criar LivroDao para salvar ou manipular dados no banco local.
+
+Criar Main que orquestra a execução (entrada de dados do usuário → chamada ao serviço → exibição do resultado).
